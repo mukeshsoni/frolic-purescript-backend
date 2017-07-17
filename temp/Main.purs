@@ -1,4 +1,7 @@
+module Main where
+
 import Prelude
 import Control.Monad.Eff.Console (CONSOLE, log)
 
-hey there
+main = do
+  log "hey there"
