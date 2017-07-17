@@ -22,10 +22,9 @@ appendImport :: PackageName -> PackageNameWithImport
 appendImport = append "import "
 
 psFile :: Array PackageName -> ExprStr -> PsFileContent
-psFile _ _ = ?psFile
 psFile pkgs exprStr = (intercalate "\n" $ map appendImport pkgs) <> "\n\n" <> exprStr
 
-writePsFile exprStr = writeTextFile UTF8 "./test.purs" $ psFile basicPackages exprStr
+-- writePsFile exprStr = writeTextFile UTF8 "./test.purs" $ psFile basicPackages exprStr
 
 main :: forall e. Eff (console :: CONSOLE | e) Unit
 main = do
