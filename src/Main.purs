@@ -36,10 +36,10 @@ buildPsFile exprStr = do
   let stout = stdout cp
       sterr = stderr cp
   onDataString stout UTF8 \s ->
-    log s
+    log (s <> " yipppeee!!")
 
   onDataString sterr UTF8 \s ->
-    log s
+    log ("Erorrrrrr! " <> s)
 
   onExit cp \e -> case e of
     Normally 0 -> log (show e)
